@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2DTransformations", "2DTransformations\2DTransformations.csproj", "{9104BCAF-1CFA-47FA-B529-ED0242379F4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9104BCAF-1CFA-47FA-B529-ED0242379F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9104BCAF-1CFA-47FA-B529-ED0242379F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9104BCAF-1CFA-47FA-B529-ED0242379F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9104BCAF-1CFA-47FA-B529-ED0242379F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8264E0FC-54A5-4737-ACC2-ADE52D401F06}
+	EndGlobalSection
+EndGlobal
