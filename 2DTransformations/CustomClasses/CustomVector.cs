@@ -47,28 +47,24 @@ namespace _2DTransformations.CustomClasses
             return vector;
         }
 
-        public CustomVector Multiply(CustomVector v1, CustomVector v2)
+        public double Multiply(CustomVector v1, CustomVector v2)
         {
-            var x = (v1.XCoordinate * v2.XCoordinate) + (v1.XCoordinate * v2.YCoordinate);
-            var y = (v1.YCoordinate * v2.XCoordinate) + (v1.YCoordinate * v2.YCoordinate);
-            var vector = new CustomVector(x, y);
-            return vector;
+            var result = (v1.XCoordinate * v2.XCoordinate) + (v1.YCoordinate * v2.YCoordinate); 
+            return result;
         }
 
         public CustomVector Multiply(CustomVector v1, double scalar)
         {
             var x = scalar * v1.XCoordinate;
             var y = scalar * v1.YCoordinate;
-            var vector = new CustomVector(x, y);
-            return vector;
+            return new CustomVector(x, y);
         }
 
         public CustomVector DivideByScalar(CustomVector v1, double scalar)
         {
-            var x = scalar / v1.XCoordinate;
-            var y = scalar / v1.YCoordinate;
-            var vector = new CustomVector(x, y);
-            return vector;
+            var x = v1.XCoordinate / scalar;
+            var y = v1.YCoordinate / scalar;
+            return new CustomVector(x, y); 
         }
 
         public double Angle(CustomVector v1, CustomVector v2)
@@ -85,8 +81,9 @@ namespace _2DTransformations.CustomClasses
 
         public void Normalize()
         {
-            XCoordinate = XCoordinate / Length;
-            YCoordinate = YCoordinate / Length;
+            var originalLength = Length;
+            XCoordinate = XCoordinate / originalLength;
+            YCoordinate = YCoordinate / originalLength;
         }
     }
 }
