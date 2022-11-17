@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2DTransformations", "2DTransformations\2DTransformations.csproj", "{9104BCAF-1CFA-47FA-B529-ED0242379F4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomStruct", "CustomStruct\CustomStruct.csproj", "{C88E8F24-54A9-4A2D-9199-E3F195391811}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9104BCAF-1CFA-47FA-B529-ED0242379F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9104BCAF-1CFA-47FA-B529-ED0242379F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9104BCAF-1CFA-47FA-B529-ED0242379F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C88E8F24-54A9-4A2D-9199-E3F195391811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C88E8F24-54A9-4A2D-9199-E3F195391811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C88E8F24-54A9-4A2D-9199-E3F195391811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C88E8F24-54A9-4A2D-9199-E3F195391811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

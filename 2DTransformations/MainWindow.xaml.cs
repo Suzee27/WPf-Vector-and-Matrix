@@ -24,8 +24,7 @@ namespace _2DTransformations
         {
             InitializeComponent();
         }
-        Matrix
-        Vector
+        
         
     }
 }

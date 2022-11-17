@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2DTransformations.CustomClasses
+namespace CustomStruct
 {
     public struct CustomVector
     {
