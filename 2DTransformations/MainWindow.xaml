@@ -6,7 +6,70 @@
         xmlns:local="clr-namespace:_2DTransformations"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Viewbox Stretch="Uniform">
+        <Grid Width="600" Height="340"  ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
+                    <TextBlock Text="Center X  "/>
+                    <TextBox x:Name="txtCenterX" Width="42"/>
+                    <TextBlock Text="Center     " Margin="30,0,0,0"/>
+                    <TextBox x:Name="txtCenterY" Width="42"/>
+                    <TextBox x:Name="txtAngleX" Width="22" Margin="30,0,0,0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="1">
+                    <TextBlock Text="Scale X   "/>
+                    <TextBox x:Name="txtX" Width="42"/>
+                    <TextBlock Text="Scale Y   " Margin="40,0,0,0"/>
+                    <TextBox x:Name="txtY" Width="42"/>
+                    <TextBox x:Name="txtAngleY" Width="22" Margin="30,0,0,0" />
+                </StackPanel>
 
-    </Grid>
+                <Border Grid.Row="2" BorderThickness="2" BorderBrush="Aquamarine">
+                    <Canvas ClipToBounds="True">
+                        <Rectangle Width="50" Height="80" Canvas.Top="60" Canvas.Left="60"
+                                   Stroke="DarkBlue"/>
+                        <Rectangle Width="50" Height="80" Canvas.Top="60" Canvas.Left="60"
+                                   Stroke="Moccasin">
+                            <Rectangle.RenderTransform>
+                                <ScaleTransform ScaleX="{Binding ElementName=txtX, Path=Text}"
+                                                ScaleY="{Binding ElementName=txtY, Path=Text}"
+                                                CenterX="{Binding ElementName=txtCenterX, Path=Text}"
+                                                CenterY="{Binding ElementName=txtCenterY, Path=Text}"/>
+                            </Rectangle.RenderTransform> 
+                        </Rectangle>
+                        <Rectangle Width="30" Height="50" Canvas.Top="60" Canvas.Left="190" Stroke="BurlyWood"/>
+                        <Rectangle Width="30" Height="50" Canvas.Top="60" Canvas.Left="190"
+                                   Fill="AliceBlue">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform CenterX="{Binding ElementName=txtCenterX, Path=Text}"
+                                                 CenterY="{Binding ElementName=txtCenterY, Path=Text}"
+                                                 Angle="{Binding ElementName=txtAngle, Path=Text}"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle Width="30" Height="50" Canvas.Top="160" Canvas.Left="150" StrokeDashArray="1"
+                                   StrokeThickness="3" Stroke="DeepSkyBlue"/>
+                        <Rectangle Width="30" Height="50" Canvas.Top="160" Canvas.Left="150" Fill="HotPink">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform X="{Binding ElementName=txtX, Path=Text}"
+                                                        Y="{Binding ElementName=txtY, Path=Text}"/>
+                                    <SkewTransform AngleX="{Binding ElementName=txtAngleX, Path=Text}"
+                                                   AngleY="{Binding ElementName=txtAngleY, Path=Text}"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </Canvas>
+                </Border>
+            </Grid>
+        </Grid>
+    </Viewbox>
 </Window>

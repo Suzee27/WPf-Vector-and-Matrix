@@ -30,8 +30,12 @@ namespace CustomStruct
                 return Math.Pow(Length,2);
             }
         }
-
-        public CustomVector AddVector(CustomVector v1, CustomVector v2)
+        public CustomVector Add(CustomVector v1, CustomVector v2)
+        {
+            var _vector = v1 + v2;
+            return _vector;
+        }
+        public static CustomVector operator +(CustomVector v1, CustomVector v2)
         {
             var x = v1.XCoordinate + v2.XCoordinate;
             var y = v1.YCoordinate + v2.YCoordinate;
@@ -39,7 +43,7 @@ namespace CustomStruct
             return vectorAddition;
         }
 
-        public CustomVector SubtractVector(CustomVector v1, CustomVector v2)
+        public static CustomVector operator -(CustomVector v1, CustomVector v2)
         {
             var x = v1.XCoordinate - v2.XCoordinate;
             var y = v1.YCoordinate - v2.YCoordinate;
@@ -67,9 +71,9 @@ namespace CustomStruct
             return new CustomVector(x, y); 
         }
 
-        public double Angle(CustomVector v1, CustomVector v2)
+        public static double Angle(CustomVector v1, CustomVector v2)
         {
-            var theta = (Math.Atan(v2.YCoordinate/v2.XCoordinate) - (Math.Atan(v1.YCoordinate/v1.XCoordinate)) * 180) / Math.PI;
+            var theta = (Math.Atan(v2.YCoordinate/v2.XCoordinate) - (Math.Atan(v1.YCoordinate/v1.XCoordinate))) * (180 / Math.PI);
             return theta;
         }
 

@@ -38,7 +38,7 @@ namespace CustomStruct
                 return CheckIdentity();
             }
         }
-        public bool HasInverse { get; }
+        public bool HasInverse { get { return Inverse(); } }
 
         public CustomMatrix Multiply(CustomMatrix m1, CustomMatrix m2)
         {
@@ -109,7 +109,7 @@ namespace CustomStruct
             return X11*(Y22-0) - Y12*(X21-0);
         }
 
-        public void Inverse()
+        public void GetInverse()
         {
             double det = Determinate();
             var x11 = X11 / det;
@@ -140,7 +140,7 @@ namespace CustomStruct
             bool status = false;
             if (m1.X11 != m2.X11 && m1.Y12 != m2.Y12 && m1.X21 != m2.X21 && m1.Y22 != m2.Y22 && m1.OffsetX != m2.OffsetX && m1.OffsetY != m2.OffsetY) return true;
             return status;
-        }
+        } 
 
         public static CustomMatrix operator *(CustomMatrix m1, CustomMatrix m2)
         {
@@ -155,5 +155,10 @@ namespace CustomStruct
         }
         CustomMatrix _identityMatrix = new CustomMatrix(1, 0, 0, 1, 0, 0);
        
+        private bool Inverse()
+        {
+            if (Determinant == 0) return false;
+            else return true; 
+        }
     }
 }
